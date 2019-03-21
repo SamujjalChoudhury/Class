@@ -17,13 +17,13 @@ int main()
 	int arr[n], m, M;
 
 	cout<<"Enter the numbers : "<<endl;
-	setArray(arr, n-1);
+	setArray(arr, n);
 
 	M = max(arr, n-1);
 	m = min(arr, n-1);
 
-	cout<<"\nMaximum is : "<<M<<endl<<endl;
-	cout<<"Minimum is : "<<m<<endl;
+	cout<<"\nMaximum is : "<<arr[M]<<endl<<"Position : "<<M+1<<endl<<endl;
+	cout<<"Minimum is : "<<arr[m]<<endl<<"Position : "<<m+1<<endl;
 
 	return 0;
 }
@@ -31,9 +31,9 @@ int main()
 // Finds the maximun
 int max(int arr[], int n)
 {
-	static int m = arr[0];
+	static int m = 0;
 	if(n>=0){
-		if(arr[n]>m)	m = arr[n];
+		if(arr[n]>arr[m])	m = n;
 		max(arr, n-1);
 	}
 
@@ -43,20 +43,22 @@ int max(int arr[], int n)
 // Finds the minimun
 int min(int arr[], int n)
 {
-	static int min = arr[0];
+	static int m = 0;
 	if(n>=0){
-		if(arr[n]<min)	min = arr[n];
+		if(arr[n]<arr[m])	m = n;
+		min(arr, n-1);
 	}
 
-	return min;
+	return m;
 }
 
 // Takes the input of the array
  void setArray(int arr[], int n)
 {
-	if(n>=0){
-		cin>>arr[n];
-		setArray(arr, n-1);
+	static int i = 0;
+	if(i!=n){
+		cin>>arr[i++];
+		setArray(arr, n);
 	}
 
 }
