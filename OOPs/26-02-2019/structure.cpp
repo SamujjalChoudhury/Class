@@ -1,7 +1,14 @@
+// WAP using structure to display the folowing tables
+
+// 	------------------------------------------------
+// 	| Name   | Roll No    | CGPA   | Date of Birth |
+// 	------------------------------------------------
+
+
 #include<iostream>
 #include<limits>
 #include<cstring>
-#include<string>
+
 using namespace std;
 void printChar(int, char);
 int getLen(int);
