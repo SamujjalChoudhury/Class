@@ -20,7 +20,7 @@ int main()
 	printf("Newton Rapshon Method \n\nEnter the guess value : ");
 	scanf("%f", &x1);
 
-	x2 = x1 - (f(x1)/f(x2));
+	x2 = x1 - (f(x1)/fd(x2));
 
 	while(fabs(x2-x1) > e){
 		x1 = x2;
