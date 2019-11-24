@@ -32,3 +32,5 @@ class Three{
 		System.out.println("\nNumber of zeros : " + count);
 	}
 }
+
+// SamujjalChoudhury
